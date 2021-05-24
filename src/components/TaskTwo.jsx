@@ -11,7 +11,7 @@ const TaskTwo = () => {
         const item =  data.find(itm => itm === _item);
         const findIndex = data.findIndex((i => i.id == _item.id));
 
-        return [item, findIndex];
+        return {item, findIndex};
     }
 
     // function toggleStatus(itm, key_field) {
@@ -30,10 +30,10 @@ const TaskTwo = () => {
     //     setData(updatedArr);
     // }
 
-    async function handleEvents(action, item) {
-        let [itm, index] = await findItem(item);
+    async function handleEvents(action, _item) {
+        let {item, findIndex} = await findItem(_item);
 
-        if (!itm || typeof(itm) !== "object") {
+        if (!item || typeof(item) !== "object") {
             // notify
             notification['error']({
                 message: "Item not found!",
@@ -42,41 +42,41 @@ const TaskTwo = () => {
             return false;
         }
 
-        let updatedArr = data;
-        let targetItem = updatedArr[index];
-        function updateData() {
-            setData(updatedArr);
+        if (action === "create") {
+            item['isCreate'] = !item['isCreate'];
+            let arr = [...data];
+            arr[findIndex] = item;
+            setData(arr);
         }
-
-
-
-        switch(action) {
-            case "create":
-                // toggleStatus(_itm, 'isCreate');
-                targetItem[`isCreate`] = !targetItem[`isCreate`] 
-                updateData();
-            
-            case "view":
-                // toggleStatus(_itm, 'isView');
-                targetItem[`isView`] = !targetItem[`isView`] 
-                updateData();
-
-            case "edit":
-                // toggleStatus(_itm, 'isEdit');
-                targetItem[`isEdit`] = !targetItem[`isEdit`] 
-                updateData();
-            
-            case "delete":
-                // toggleStatus(_itm, 'isDelete');
-                targetItem[`isDelete`] = !targetItem[`isDelete`] 
-                updateData();
-            
-            case "approve":
-                // toggleStatus(_itm, 'isApprove');
-                targetItem[`isApprove`] = !targetItem[`isApprove`] 
-                updateData();
-
-            default: updateData();
+        else if (action === "view") {
+            item['isView'] = !item['isView'];
+            let arr = [...data];
+            arr[findIndex] = item;
+            setData(arr);
+        }
+        else if (action === "edit") {
+            item['isEdit'] = !item['isEdit'];
+            let arr = [...data];
+            arr[findIndex] = item;
+            setData(arr);
+        }
+        else if (action === "delete") {
+            item['isDelete'] = !item['isDelete'];
+            let arr = [...data];
+            arr[findIndex] = item;
+            setData(arr);
+        }
+        else if (action === "approve") {
+            item['isApprove'] = !item['isApprove'];
+            let arr = [...data];
+            arr[findIndex] = item;
+            setData(arr);
+        }
+        else {
+            // notify
+            notification['error']({
+                message: "Wrong event!",
+            });
         }
     }
 
