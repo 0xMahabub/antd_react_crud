@@ -12,6 +12,17 @@ export const PageWrapper = styled.div`
     max-width: ${props => props.tasks ? '1376px' : '900px'};
     margin: ${props => props.task ? '1rem auto' : '3rem auto'};
     padding: 3.5rem 1.5rem;
+
+    .ant-row {
+        margin: .85rem .85rem auto;
+    }
+
+    /* Responsive */
+    @media only screen and (max-width: 800px) {
+        max-width: 99%;
+        padding: 1.5rem .5rem;
+        margin: .85rem auto;
+    }
 `;
 
 
@@ -27,4 +38,12 @@ export const MenuUL = styled.ul`
     align-items: center;
     list-style: none;
     text-decoration: underline;
+`;
+
+
+export const TableWrapper = styled.div`
+    display: block;
+    width: 100%;
+    max-width: 1376px;
+    overflow-x: scroll;
 `;

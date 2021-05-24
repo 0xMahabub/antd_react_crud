@@ -1,21 +1,25 @@
 import { Checkbox, Table } from 'antd';
+import { TableWrapper } from '../Styled.common';
 
 const DataTable = ({ data, handleAction }) => {
     const cols = [
         {
             title: 'Module Name',
             dataIndex: 'moduleName',
-            width: '20%',
-            fixed: 'left'
+            // width: '20%',
+            // fixed: 'left',
+            responsive: ["xs", "sm", "md", "lg", "xl"]
         },
         {
             title: 'Activity Name',
             dataIndex: 'activityName',
-            width: '40%',
+            // width: '40%',
+            responsive: ["xs", "sm", "md", "lg", "xl"]
         },
         {
             title: 'Create',
-            width: '8%',
+            // width: '8%',
+            responsive: ["xs", "sm", "md", "lg", "xl"],
             render: (record) => {
                 return (
                     <>
@@ -26,7 +30,8 @@ const DataTable = ({ data, handleAction }) => {
         },
         {
             title: 'View',
-            width: '8%',
+            // width: '8%',
+            responsive: ["xs", "sm", "md", "lg", "xl"],
             render: (record) => {
                 return (
                     <>
@@ -37,7 +42,8 @@ const DataTable = ({ data, handleAction }) => {
         },
         {
             title: 'Edit',
-            width: '8%',
+            // width: '8%',
+            responsive: ["xs", "sm", "md", "lg", "xl"],
             render: (record) => {
                 return (
                     <>
@@ -48,7 +54,8 @@ const DataTable = ({ data, handleAction }) => {
         },
         {
             title: 'Delete',
-            width: '8%',
+            // width: '8%',
+            responsive: ["xs", "sm", "md", "lg", "xl"],
             render: (record) => {
                 return (
                     <>
@@ -59,7 +66,8 @@ const DataTable = ({ data, handleAction }) => {
         },
         {
             title: 'Approve',
-            width: '8%',
+            // width: '8%',
+            responsive: ["xs", "sm", "md", "lg", "xl"],
             render: (record) => {
                 return (
                     <>
@@ -72,13 +80,13 @@ const DataTable = ({ data, handleAction }) => {
 
 
     return (
-        <>
+        <TableWrapper>
             <Table
                 columns={cols}
                 rowKey={record => record.id}
                 dataSource={data}
             />
-        </>
+        </TableWrapper>
     );
 }
 
