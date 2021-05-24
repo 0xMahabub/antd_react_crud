@@ -31,7 +31,7 @@ const Tasks = ({ match }) => {
         <PageWrapper>
           <h2>Please select a task from the menu</h2>
         </PageWrapper>
-      )} exact />
+      )} />
       <Route path={match.url + "/1"} component={TaskOne} />
       <Route path={match.url + "/2"} component={TaskTwo} />
       <Route path="/**" render={() => (

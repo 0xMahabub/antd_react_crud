@@ -1,4 +1,4 @@
-export default [
+const data = [
     {
         id: 101,
         moduleName: 'Configuration',
@@ -110,3 +110,6 @@ export default [
         isApprove: false
     },
 ];
+
+
+export default data;

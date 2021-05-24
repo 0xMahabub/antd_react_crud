@@ -9,7 +9,7 @@ const TaskTwo = () => {
 
     function findItem(_item) {
         const item =  data.find(itm => itm === _item);
-        const findIndex = data.findIndex((i => i.id == _item.id));
+        const findIndex = data.findIndex((i => i.id === _item.id));
 
         return {item, findIndex};
     }
