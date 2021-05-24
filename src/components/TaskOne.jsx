@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { Form, Input, Button, Divider, notification } from 'antd';
 import { PageWrapper } from './Styled.common';
-import DataTable from './Table';
+import UserTable from './Table/index';
 
 const TaskOne = () => {
     const [form] = Form.useForm();
@@ -75,7 +75,7 @@ const TaskOne = () => {
 
             <Divider />
 
-            <DataTable users={users} delUser={deleteUser} />
+            <UserTable users={users} delUser={deleteUser} />
         </PageWrapper>
     );
 }
