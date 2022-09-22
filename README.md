@@ -1,4 +1,4 @@
-# iBOS ltd. internship task projects by Md. Mahabub Alam (@mahabudbev)
+# XX-companyName internship task projects by Md. Mahabub Alam (@mahabudbev)
 
 [Live preview `link`](https://ibos-tasks-mahabubdev.netlify.app/)
 
@@ -19,5 +19,5 @@
 
 ### Contact
 `Phone: (880) 1629 235256`<br>
-`Email: mahabub10121013@gmail.com`<br>
+`Email: iosmahabub@gmail.com`<br>
 Website: [mahabubdev.github.io](https://mahabubdev.github.io/)
